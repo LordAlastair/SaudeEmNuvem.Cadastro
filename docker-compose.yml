@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  saudeemnuvem.cadastro.api:
+    image: saudeemnuvem.cadastro.api
+    build:
+      context: ./SaudeEmNuvem.Cadastro.API
+      dockerfile: Dockerfile

@@ -1,15 +1,22 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaudeEmNuvem.Cadastro.Domain", "SaudeEmNuvem.Cadastro.Domain\SaudeEmNuvem.Cadastro.Domain.csproj", "{EA10470D-0E69-42DC-8083-96C60C2C3A96}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaudeEmNuvem.Cadastro.Domain", "SaudeEmNuvem.Cadastro.Domain\SaudeEmNuvem.Cadastro.Domain.csproj", "{EA10470D-0E69-42DC-8083-96C60C2C3A96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaudeEmNuvem.Cadastro.API", "SaudeEmNuvem.Cadastro.API\SaudeEmNuvem.Cadastro.API.csproj", "{759DB9F3-A6DD-43CB-AE5C-28AFB438B052}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaudeEmNuvem.Cadastro.API", "SaudeEmNuvem.Cadastro.API\SaudeEmNuvem.Cadastro.API.csproj", "{759DB9F3-A6DD-43CB-AE5C-28AFB438B052}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EA10470D-0E69-42DC-8083-96C60C2C3A96} = {EA10470D-0E69-42DC-8083-96C60C2C3A96}
+		{2398F2FE-DAB8-4E15-ACAD-00B7F547692F} = {2398F2FE-DAB8-4E15-ACAD-00B7F547692F}
+	EndProjectSection
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{0F755E20-BEAF-4348-82B2-6883A5CD2A0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaudeEmNuvem.Cadastro.Infrastructure", "SaudeEmNuvem.Cadastro.Infrastructure\SaudeEmNuvem.Cadastro.Infrastructure.csproj", "{2398F2FE-DAB8-4E15-ACAD-00B7F547692F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaudeEmNuvem.Cadastro.Infrastructure", "SaudeEmNuvem.Cadastro.Infrastructure\SaudeEmNuvem.Cadastro.Infrastructure.csproj", "{2398F2FE-DAB8-4E15-ACAD-00B7F547692F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EA10470D-0E69-42DC-8083-96C60C2C3A96} = {EA10470D-0E69-42DC-8083-96C60C2C3A96}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

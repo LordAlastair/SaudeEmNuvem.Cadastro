@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel
 {
@@ -10,24 +9,22 @@ namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel
     {
         public static TipoSanguineo APositivo = new TipoSanguineo(1, "A+");
         public static TipoSanguineo ANegativo = new TipoSanguineo(2, "A-");
-        public static TipoSanguineo ABPositivo = new TipoSanguineo(3, "AB+");
-        public static TipoSanguineo ABNegativo = new TipoSanguineo(4, "AB-");
+        public static TipoSanguineo AbPositivo = new TipoSanguineo(3, "AB+");
+        public static TipoSanguineo AbNegativo = new TipoSanguineo(4, "AB-");
         public static TipoSanguineo BPositivo = new TipoSanguineo(5, "B+");
         public static TipoSanguineo BNegativo = new TipoSanguineo(6, "B-");
         public static TipoSanguineo OPositivo = new TipoSanguineo(7, "O+");
         public static TipoSanguineo ONegativo = new TipoSanguineo(8, "O-");
 
-        private TipoSanguineo() { }
-
+        protected TipoSanguineo() { }
         public TipoSanguineo(int id, string nome)
             : base(id, nome)
         {
-
         }
 
         public static IEnumerable<TipoSanguineo> List()
         {
-            return new[] { APositivo, ANegativo, ABPositivo, ABNegativo, BPositivo, BNegativo, OPositivo, ONegativo };
+            return new[] { APositivo, ANegativo, AbPositivo, AbNegativo, BPositivo, BNegativo, OPositivo, ONegativo };
         }
 
         public static TipoSanguineo BuscarPeloNome(string nome)
@@ -50,6 +47,7 @@ namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel
             {
                 throw new ArgumentException($"Valores possiveis tipo sanguíneo: {String.Join(",", List().Select(s => s.Name))}");
             }
+
             return situacao;
         }
     }

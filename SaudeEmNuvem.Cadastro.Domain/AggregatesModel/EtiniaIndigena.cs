@@ -1,17 +1,15 @@
 ﻿using SaudeEmNuvem.Cadastro.Domain.SeedWork;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel
 {
     public class EtiniaIndigena : ValueObject
     {
         public int ChaveNatural { get; set; }
-        public String Etnia { get; set; }
-        private EtiniaIndigena() { }
+        public string Etnia { get; set; }
 
-        public EtiniaIndigena(int chaveNatural, String etnia)
+        protected EtiniaIndigena() { }
+        public EtiniaIndigena(int chaveNatural, string etnia)
         {
             ChaveNatural = chaveNatural;
             Etnia = etnia;

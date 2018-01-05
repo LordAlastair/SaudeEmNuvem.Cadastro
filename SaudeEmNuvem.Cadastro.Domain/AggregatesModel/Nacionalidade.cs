@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel
 {
@@ -12,12 +11,9 @@ namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel
         public static Nacionalidade Naturalizado = new Nacionalidade(2, "Naturalizado");
         public static Nacionalidade Estrangeiro = new Nacionalidade(3, "Estrangeiro");
 
-        private Nacionalidade() { }
+        protected Nacionalidade() { }
         public Nacionalidade(int id, string nome)
-            : base(id, nome)
-        {
-
-        }
+            : base(id, nome) { }
 
         public static IEnumerable<Nacionalidade> List()
         {

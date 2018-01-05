@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel
 {
@@ -14,13 +13,10 @@ namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel
         public static Cor Amarela = new Cor(4, "AMARELA");
         public static Cor Indigena = new Cor(5, "INDÍGENA");
 
-        private Cor() { }
+        protected Cor() { }
 
         public Cor(int id, string nome)
-            : base(id, nome)
-        {
-
-        }
+            : base(id, nome) { }
 
         public static IEnumerable<Cor> List()
         {
@@ -47,6 +43,7 @@ namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel
             {
                 throw new ArgumentException($"Valores possiveis para cor: {String.Join(",", List().Select(s => s.Name))}");
             }
+
             return situacao;
         }
     }

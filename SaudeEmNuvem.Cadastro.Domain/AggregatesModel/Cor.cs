@@ -7,6 +7,7 @@ namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel
 {
     public class Cor : Enumeration
     {
+        public static Cor NaoInformado = new Cor(0, "Não Informado");
         public static Cor Branca = new Cor(1, "BRANCA");
         public static Cor Preta = new Cor(2, "PRETA");
         public static Cor Parda = new Cor(3, "PARDA");
@@ -20,7 +21,7 @@ namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel
 
         public static IEnumerable<Cor> List()
         {
-            return new[] { Branca, Preta, Parda, Amarela, Indigena };
+            return new[] { Branca, Preta, Parda, Amarela, Indigena, NaoInformado };
         }
 
         public static Cor BuscarPeloNome(string nome)

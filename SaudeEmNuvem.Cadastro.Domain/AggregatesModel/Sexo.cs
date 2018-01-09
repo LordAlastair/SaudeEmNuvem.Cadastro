@@ -7,9 +7,9 @@ namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel
 {
     public class Sexo : Enumeration
     {
+        public static Sexo NaoInformado = new Sexo(0, "Não Informado");
         public static Sexo Masculino = new Sexo(1, "Masculino");
         public static Sexo Feminino = new Sexo(2, "Feminino");
-        public static Sexo Outro = new Sexo(3, "Não Informado");
 
         protected Sexo() { }
         public Sexo(int id, string nome)
@@ -19,7 +19,7 @@ namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel
 
         public static IEnumerable<Sexo> List()
         {
-            return new[] { Masculino, Feminino, Outro };
+            return new[] { Masculino, Feminino, NaoInformado };
         }
 
         public static Sexo BuscarPeloNome(string nome)

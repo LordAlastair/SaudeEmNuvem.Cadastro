@@ -7,6 +7,7 @@ namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel
 {
     public class Nacionalidade : Enumeration
     {
+        public static Nacionalidade NaoInformado = new Nacionalidade(0, "Não Informado");
         public static Nacionalidade Brasileiro = new Nacionalidade(1, "Brasileiro");
         public static Nacionalidade Naturalizado = new Nacionalidade(2, "Naturalizado");
         public static Nacionalidade Estrangeiro = new Nacionalidade(3, "Estrangeiro");
@@ -17,7 +18,7 @@ namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel
 
         public static IEnumerable<Nacionalidade> List()
         {
-            return new[] { Brasileiro, Naturalizado, Estrangeiro };
+            return new[] { Brasileiro, Naturalizado, Estrangeiro, NaoInformado };
         }
 
         public static Nacionalidade BuscarPeloNome(string nome)

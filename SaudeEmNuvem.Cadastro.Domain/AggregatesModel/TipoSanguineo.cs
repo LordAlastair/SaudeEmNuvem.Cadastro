@@ -7,6 +7,7 @@ namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel
 {
     public class TipoSanguineo : Enumeration
     {
+        public static TipoSanguineo NaoInformado = new TipoSanguineo(0, "Não Informado");
         public static TipoSanguineo APositivo = new TipoSanguineo(1, "A+");
         public static TipoSanguineo ANegativo = new TipoSanguineo(2, "A-");
         public static TipoSanguineo AbPositivo = new TipoSanguineo(3, "AB+");

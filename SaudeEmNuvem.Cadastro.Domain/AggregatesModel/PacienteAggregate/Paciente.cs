@@ -1,8 +1,9 @@
 ﻿using SaudeEmNuvem.Cadastro.Domain.SeedWork;
 using System;
 using System.Collections.Generic;
+using SaudeEmNuvem.Cadastro.Domain.AggregatesModel.PacienteAggregate;
 
-namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel
+namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel.PacienteAggregate
 {
     public class Paciente
         : Entity, IAggregateRoot

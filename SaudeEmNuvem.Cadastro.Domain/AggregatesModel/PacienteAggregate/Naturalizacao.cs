@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using SaudeEmNuvem.Cadastro.Domain.SeedWork;
 
-namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel
+namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel.PacienteAggregate
 {
     public class Naturalizacao : ValueObject
     {

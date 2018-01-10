@@ -1,9 +1,9 @@
-﻿using SaudeEmNuvem.Cadastro.Domain.SeedWork;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using SaudeEmNuvem.Cadastro.Domain.SeedWork;
 
-namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel
+namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel.PacienteAggregate
 {
     public class Cor : Enumeration
     {

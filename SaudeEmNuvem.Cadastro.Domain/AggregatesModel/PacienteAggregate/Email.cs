@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using SaudeEmNuvem.Cadastro.Domain.SeedWork;
 
-namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel
+namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel.PacienteAggregate
 {
     //Possível migração para o módulo de autenticação...
     public class Email : ValueObject

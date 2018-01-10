@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using SaudeEmNuvem.Cadastro.Domain.SeedWork;
 
-namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel
+namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel.PacienteAggregate
 {
     public class TipoDocumento : Enumeration
     {
+        public static TipoDocumento Outro = new TipoDocumento(0, "Outro");
         public static TipoDocumento CPF = new TipoDocumento(1, "CPF");
         public static TipoDocumento RG = new TipoDocumento(2, "RG");
         public static TipoDocumento DNV = new TipoDocumento(3, "DNV");
@@ -20,7 +21,7 @@ namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel
 
         public static IEnumerable<TipoDocumento> List()
         {
-            return new[] { CPF, RG, DNV, InscricaoSocial };
+            return new[] { Outro, CPF, RG, DNV, InscricaoSocial };
         }
 
         public static TipoDocumento BuscarPeloNome(string nome)

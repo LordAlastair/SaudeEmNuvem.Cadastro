@@ -13,6 +13,7 @@ namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel.PacienteAggregate
         public DateTime? DataNaturalizacao { get; private set; }
 
         protected Naturalizacao() { }
+
         public Naturalizacao(string numero, string portaria, string pais, DateTime dataEntrada, DateTime? dataNaturalizacao)
         {
             Numero = numero;

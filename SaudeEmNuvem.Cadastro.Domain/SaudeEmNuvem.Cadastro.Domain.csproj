@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Events\SolicitacaoDeCadastroIniciadoDomainEvent.cs~RF3875ba4c.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="4.0.0" />
   </ItemGroup>
 

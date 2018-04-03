@@ -3,8 +3,10 @@ using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
 using SaudeEmNuvem.Cadastro.Domain.AggregatesModel.PacienteAggregate;
 using SaudeEmNuvem.Cadastro.Domain.SeedWork;
+using SaudeEmNuvem.Cadastro.Infrastructure.EntityConfigurations;
 
 namespace SaudeEmNuvem.Cadastro.Infrastructure
 {
@@ -31,12 +33,51 @@ namespace SaudeEmNuvem.Cadastro.Infrastructure
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
+            modelBuilder.ApplyConfiguration(new CorEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new NacionalidadeEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new PacienteEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new SexoEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new TipoDocumentoEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new TipoSanguineoEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new TipoTelefoneEntityTypeConfiguration());
         }
 
-        public Task<bool> SaveEntitiesAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<bool> SaveEntitiesAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            throw new NotImplementedException();
+            await _mediator.DispatchDomainEventsAsync(this);
+
+            var result = await base.SaveChangesAsync();
+
+            return true;
+        }
+
+        public class CadastroContextDesignFactory : IDesignTimeDbContextFactory<CadastroContext>
+        {
+            public CadastroContext CreateDbContext(string[] args)
+            {
+                var optionsBuilder = new DbContextOptionsBuilder<CadastroContext>()
+                    .UseSqlServer("Server=.;Initial Catalog=SaudeEmNuvem.Services.Cadastro;Integrated Security=true");
+
+                return new CadastroContext(optionsBuilder.Options, new NoMediator());
+            }
+
+            class NoMediator : IMediator
+            {
+                public Task Publish<TNotification>(TNotification notification, CancellationToken cancellationToken = default(CancellationToken)) where TNotification : INotification
+                {
+                    return Task.CompletedTask;
+                }
+
+                public Task<TResponse> Send<TResponse>(IRequest<TResponse> request, CancellationToken cancellationToken = default(CancellationToken))
+                {
+                    return Task.FromResult<TResponse>(default(TResponse));
+                }
+
+                public Task Send(IRequest request, CancellationToken cancellationToken = default(CancellationToken))
+                {
+                    return Task.CompletedTask;
+                }
+            }
         }
     }
 }

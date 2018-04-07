@@ -1,6 +1,6 @@
-﻿using System;
-using MediatR;
+﻿using MediatR;
 using SaudeEmNuvem.Cadastro.Domain.AggregatesModel.PacienteAggregate;
+using System;
 
 namespace SaudeEmNuvem.Cadastro.Domain.Events
 {
@@ -13,8 +13,8 @@ namespace SaudeEmNuvem.Cadastro.Domain.Events
             NomeAtendente = nomeAtendente;
         }
 
-        public Paciente Paciente { get; private set; }
-        public DateTime DataSolicitacao { get; private set; }
-        public String NomeAtendente { get; private set; }
+        public Paciente Paciente { get; }
+        public DateTime DataSolicitacao { get; }
+        public String NomeAtendente { get; }
     }
 }

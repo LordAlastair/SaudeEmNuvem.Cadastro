@@ -1,9 +1,9 @@
-﻿namespace SaudeEmNuvem.Cadastro.Domain.SeedWork
-{
-    using System;
-    using MediatR;
-    using System.Collections.Generic;
+﻿using MediatR;
+using System;
+using System.Collections.Generic;
 
+namespace SaudeEmNuvem.Cadastro.Domain.SeedWork
+{
     public abstract class Entity
     {
         int? _requestedHashCode;

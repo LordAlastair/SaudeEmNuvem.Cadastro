@@ -21,12 +21,12 @@ namespace SaudeEmNuvem.Cadastro.Infrastructure.Repositories
         public Paciente Atualizar(Paciente paciente) => _context.Pacientes.Update(paciente).Entity;
 
         public async Task<List<Paciente>> BuscarPorNomeAsync(string nome) =>
-            await _context.Pacientes.Include(p => p.Endereco).Where(p => p.Nome == nome).ToListAsync();
+            await _context.Pacientes.Include(p => p.Endereco).Where(p => p.Pessoa.Nome == nome).ToListAsync();
 
         public async Task<Paciente> BuscarPorChaveNaturalAsync(string pacienteChaveNatural) =>
-            await _context.Pacientes.Where(p => p.ChaveNatural == pacienteChaveNatural).SingleOrDefaultAsync();
+            await _context.Pacientes.Where(p => p.Meta.ChaveNatural == pacienteChaveNatural).SingleOrDefaultAsync();
 
         public async Task<List<Paciente>> BuscarPorDataNascimentoAsync(DateTime date) =>
-            await _context.Pacientes.Where(p => p.DataNascimento == date).ToListAsync();
+            await _context.Pacientes.Where(p => p.Pessoa.DataNascimento == date).ToListAsync();
     }
 }

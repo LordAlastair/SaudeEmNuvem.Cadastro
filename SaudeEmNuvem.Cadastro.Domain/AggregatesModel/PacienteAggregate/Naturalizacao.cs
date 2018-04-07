@@ -1,16 +1,16 @@
-﻿using System;
+﻿using SaudeEmNuvem.Cadastro.Domain.SeedWork;
+using System;
 using System.Collections.Generic;
-using SaudeEmNuvem.Cadastro.Domain.SeedWork;
 
 namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel.PacienteAggregate
 {
     public class Naturalizacao : ValueObject
     {
-        public string Numero { get; private set; }
-        public string Portaria { get; private set; }
-        public string Pais { get; private set; }
-        public DateTime DataEntrada { get; private set; }
-        public DateTime? DataNaturalizacao { get; private set; }
+        public string Numero { get; }
+        public string Portaria { get; }
+        public string Pais { get; }
+        public DateTime DataEntrada { get; }
+        public DateTime? DataNaturalizacao { get; }
 
         protected Naturalizacao() { }
 

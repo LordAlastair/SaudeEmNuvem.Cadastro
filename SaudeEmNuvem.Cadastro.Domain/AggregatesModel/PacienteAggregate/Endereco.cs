@@ -1,12 +1,13 @@
-﻿using System.Collections.Generic;
-using SaudeEmNuvem.Cadastro.Domain.SeedWork;
+﻿using SaudeEmNuvem.Cadastro.Domain.SeedWork;
+using System.Collections.Generic;
 
 namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel.PacienteAggregate
 {
     public class Endereco : ValueObject
     {
-        public string CEP { get; private set; }
-        public int Numero { get; private set; }
+        // ReSharper disable once InconsistentNaming
+        public string CEP { get; }
+        public int Numero { get; }
 
         protected Endereco() { }
         public Endereco(string cep, int numero)

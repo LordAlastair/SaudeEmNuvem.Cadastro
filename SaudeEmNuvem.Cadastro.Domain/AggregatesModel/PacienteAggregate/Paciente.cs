@@ -6,17 +6,17 @@ namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel.PacienteAggregate
     public class Paciente
         : Entity, IAggregateRoot
     {
-        public Pessoa Pessoa { get; private set; }
-        public Nacionalidade Nacionalidade { get; private set; }
-        public Naturalidade Naturalidade { get; private set; }
-        public Naturalizacao Naturalizacao { get; private set; }
-        public TipoSanguineo TipoSanguineo { get; private set; }
-        public Cor Cor { get; private set; }
-        public Sexo Sexo { get; private set; }
-        public Endereco Endereco { get; private set; }
-        public EtiniaIndigena EtiniaIndigena { get; private set; }
-        public Obito Obito { get; private set; }
-        public Meta Meta { get; private set; }
+        public Pessoa Pessoa { get; }
+        public Nacionalidade Nacionalidade { get; }
+        public Naturalidade Naturalidade { get; }
+        public Naturalizacao Naturalizacao { get; }
+        public TipoSanguineo TipoSanguineo { get; }
+        public Cor Cor { get; }
+        public Sexo Sexo { get; }
+        public Endereco Endereco { get; }
+        public EtiniaIndigena EtiniaIndigena { get; }
+        public Obito Obito { get; }
+        public Meta Meta { get; }
 
         //https://visualstudiomagazine.com/articles/2015/06/03/c-sharp-6-expression-bodied-properties-dictionary-initializer.aspx
         private readonly List<Documento> _documentos;
@@ -51,6 +51,6 @@ namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel.PacienteAggregate
             Meta = meta;
         }
 
-        //atributos criados proximo, falta adicionar as regras de negocio
+        //atributos criados, falta adicionar as regras de negocio
     }
 }

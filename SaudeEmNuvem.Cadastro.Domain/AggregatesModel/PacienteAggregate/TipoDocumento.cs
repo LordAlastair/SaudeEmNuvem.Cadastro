@@ -1,7 +1,7 @@
-﻿using System;
+﻿using SaudeEmNuvem.Cadastro.Domain.SeedWork;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using SaudeEmNuvem.Cadastro.Domain.SeedWork;
 
 namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel.PacienteAggregate
 {
@@ -12,7 +12,6 @@ namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel.PacienteAggregate
         public static TipoDocumento RG = new TipoDocumento(2, "RG");
         public static TipoDocumento DNV = new TipoDocumento(3, "DNV");
         public static TipoDocumento InscricaoSocial = new TipoDocumento(4, "NIS/PIS/PASEP");
-
 
         protected TipoDocumento() { }
 

@@ -1,13 +1,13 @@
-﻿using System.Collections.Generic;
-using SaudeEmNuvem.Cadastro.Domain.SeedWork;
+﻿using SaudeEmNuvem.Cadastro.Domain.SeedWork;
+using System.Collections.Generic;
 
 namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel.PacienteAggregate
 {
     public class Naturalidade : ValueObject
     {
-        public string MunicipioNascimento { get; private set; }
-        public string PaisNascimento { get; private set; }
-        public bool? Nomade { get; private set; }
+        public string MunicipioNascimento { get; }
+        public string PaisNascimento { get; }
+        public bool? Nomade { get; }
 
         protected Naturalidade() { }
 

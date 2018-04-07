@@ -1,7 +1,7 @@
-﻿using System;
+﻿using SaudeEmNuvem.Cadastro.Domain.SeedWork;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using SaudeEmNuvem.Cadastro.Domain.SeedWork;
 
 namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel.PacienteAggregate
 {

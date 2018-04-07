@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using SaudeEmNuvem.Cadastro.Domain.SeedWork;
+﻿using SaudeEmNuvem.Cadastro.Domain.SeedWork;
+using System.Collections.Generic;
 
 namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel.PacienteAggregate
 {
@@ -12,7 +12,7 @@ namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel.PacienteAggregate
             ChaveNatural = chaveNatural;
         }
 
-        public string ChaveNatural { get; private set; }
+        public string ChaveNatural { get;   }
 
         protected override IEnumerable<object> GetAtomicValues()
         {

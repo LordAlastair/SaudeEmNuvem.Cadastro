@@ -1,7 +1,7 @@
-﻿using System;
+﻿using SaudeEmNuvem.Cadastro.Domain.SeedWork;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using SaudeEmNuvem.Cadastro.Domain.SeedWork;
 
 namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel.PacienteAggregate
 {
@@ -13,7 +13,7 @@ namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel.PacienteAggregate
         public static TipoTelefone CelularCorporativo = new TipoTelefone(3, "Celular Corporativo");
         public static TipoTelefone Comercial = new TipoTelefone(4, "Comercial");
         public static TipoTelefone Contato = new TipoTelefone(5, "Contato");
-        public static TipoTelefone Fax = new TipoTelefone(6, "Fax"); 
+        public static TipoTelefone Fax = new TipoTelefone(6, "Fax");
         public static TipoTelefone Público = new TipoTelefone(7, "Público");
         public static TipoTelefone Residencial = new TipoTelefone(8, "Residencial");
 

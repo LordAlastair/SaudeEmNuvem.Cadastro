@@ -1,14 +1,14 @@
-﻿using System.Collections.Generic;
-using SaudeEmNuvem.Cadastro.Domain.SeedWork;
+﻿using SaudeEmNuvem.Cadastro.Domain.SeedWork;
+using System.Collections.Generic;
 
 namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel.PacienteAggregate
 {
     public class Telefone : ValueObject
     {
         //Outro candidato para o módulo de autenticação
-        public int DDD { get; private set; }
-        public string Numero { get; private set; }
-        public TipoTelefone TipoTelefone { get; private set; }
+        public int DDD { get; }
+        public string Numero { get; }
+        public TipoTelefone TipoTelefone { get; }
 
         protected Telefone() { }
         public Telefone(int ddd, string numero, TipoTelefone tipoTelefone)

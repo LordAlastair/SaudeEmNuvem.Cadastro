@@ -7,9 +7,9 @@ namespace SaudeEmNuvem.Cadastro.Domain.SeedWork
 {
     public abstract class Enumeration : IComparable
     {
-        public string Name { get; private set; }
+        public string Name { get; }
 
-        public int Id { get; private set; }
+        public int Id { get; }
 
         protected Enumeration()
         {
@@ -81,7 +81,7 @@ namespace SaudeEmNuvem.Cadastro.Domain.SeedWork
             return matchingItem;
         }
 
-        private static T Parse<T, K>(K value, string description, Func<T, bool> predicate) where T : Enumeration, new()
+        private static T Parse<T, TK>(TK value, string description, Func<T, bool> predicate) where T : Enumeration, new()
         {
             var matchingItem = GetAll<T>().FirstOrDefault(predicate);
 

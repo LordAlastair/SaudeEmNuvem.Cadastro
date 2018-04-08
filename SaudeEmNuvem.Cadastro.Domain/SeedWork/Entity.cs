@@ -4,8 +4,33 @@ using MediatR;
 
 namespace SaudeEmNuvem.Cadastro.Domain.SeedWork
 {
-    public abstract class Entity
+    public abstract class Entity : IEquatable<Entity>
     {
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (obj.GetType() != this.GetType()) return false;
+            return Equals((Entity) obj);
+        }
+
+        public bool Equals(Entity obj)
+        {
+            if (obj is null)
+                return false;
+
+            if (ReferenceEquals(this, obj))
+                return true;
+
+            if (GetType() != obj.GetType())
+                return false;
+
+            if (obj.IsTransient() || IsTransient())
+                return false;
+
+            return obj.Id == Id;
+        }
+
         int? _requestedHashCode;
         public virtual int Id { get; protected set; }
 
@@ -27,24 +52,6 @@ namespace SaudeEmNuvem.Cadastro.Domain.SeedWork
             return Id == default(Int32);
         }
 
-        public override bool Equals(object obj)
-        {
-            if (obj == null || !(obj is Entity))
-                return false;
-
-            if (ReferenceEquals(this, obj))
-                return true;
-
-            if (GetType() != obj.GetType())
-                return false;
-
-            Entity item = (Entity)obj;
-
-            if (item.IsTransient() || IsTransient())
-                return false;
-            return item.Id == Id;
-        }
-
         public override int GetHashCode()
         {
             if (!IsTransient())
@@ -56,8 +63,8 @@ namespace SaudeEmNuvem.Cadastro.Domain.SeedWork
             }
 
             return base.GetHashCode();
-
         }
+
         public static bool operator ==(Entity left, Entity right)
         {
             if (Equals(left, null))

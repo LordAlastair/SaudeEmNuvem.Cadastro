@@ -7,9 +7,9 @@ namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel.PacienteAggregate
 {
     public class Sexo : Enumeration
     {
-        public static Sexo NaoInformado = new Sexo(0, "Não Informado");
-        public static Sexo Masculino = new Sexo(1, "Masculino");
-        public static Sexo Feminino = new Sexo(2, "Feminino");
+        private static readonly Sexo NaoInformado = new Sexo(0, "Não Informado");
+        private static readonly Sexo Masculino = new Sexo(1, "Masculino");
+        private static readonly Sexo Feminino = new Sexo(2, "Feminino");
 
         protected Sexo() { }
         public Sexo(int id, string nome)

@@ -7,12 +7,12 @@ namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel.PacienteAggregate
 {
     public class Cor : Enumeration
     {
-        public static Cor NaoInformado = new Cor(0, "Não Informado");
-        public static Cor Branca = new Cor(1, "BRANCA");
-        public static Cor Preta = new Cor(2, "PRETA");
-        public static Cor Parda = new Cor(3, "PARDA");
-        public static Cor Amarela = new Cor(4, "AMARELA");
-        public static Cor Indigena = new Cor(5, "INDÍGENA");
+        private static readonly Cor NaoInformado = new Cor(0, "Não Informado");
+        private static readonly Cor Branca = new Cor(1, "BRANCA");
+        private static readonly Cor Preta = new Cor(2, "PRETA");
+        private static readonly Cor Parda = new Cor(3, "PARDA");
+        private static readonly Cor Amarela = new Cor(4, "AMARELA");
+        private static readonly Cor Indigena = new Cor(5, "INDÍGENA");
 
         protected Cor() { }
 

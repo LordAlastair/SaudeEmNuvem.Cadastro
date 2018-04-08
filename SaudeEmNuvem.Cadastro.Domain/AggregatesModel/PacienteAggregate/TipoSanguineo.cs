@@ -7,15 +7,15 @@ namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel.PacienteAggregate
 {
     public class TipoSanguineo : Enumeration
     {
-        public static TipoSanguineo NaoInformado = new TipoSanguineo(0, "Não Informado");
-        public static TipoSanguineo APositivo = new TipoSanguineo(1, "A+");
-        public static TipoSanguineo ANegativo = new TipoSanguineo(2, "A-");
-        public static TipoSanguineo AbPositivo = new TipoSanguineo(3, "AB+");
-        public static TipoSanguineo AbNegativo = new TipoSanguineo(4, "AB-");
-        public static TipoSanguineo BPositivo = new TipoSanguineo(5, "B+");
-        public static TipoSanguineo BNegativo = new TipoSanguineo(6, "B-");
-        public static TipoSanguineo OPositivo = new TipoSanguineo(7, "O+");
-        public static TipoSanguineo ONegativo = new TipoSanguineo(8, "O-");
+        private static readonly TipoSanguineo NaoInformado = new TipoSanguineo(0, "Não Informado");
+        private static readonly TipoSanguineo APositivo = new TipoSanguineo(1, "A+");
+        private static readonly TipoSanguineo ANegativo = new TipoSanguineo(2, "A-");
+        private static readonly TipoSanguineo AbPositivo = new TipoSanguineo(3, "AB+");
+        private static readonly TipoSanguineo AbNegativo = new TipoSanguineo(4, "AB-");
+        private static readonly TipoSanguineo BPositivo = new TipoSanguineo(5, "B+");
+        private static readonly TipoSanguineo BNegativo = new TipoSanguineo(6, "B-");
+        private static readonly TipoSanguineo OPositivo = new TipoSanguineo(7, "O+");
+        private static readonly TipoSanguineo ONegativo = new TipoSanguineo(8, "O-");
 
         protected TipoSanguineo() { }
         public TipoSanguineo(int id, string nome)

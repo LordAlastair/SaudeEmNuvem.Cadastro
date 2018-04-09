@@ -6,7 +6,7 @@ namespace SaudeEmNuvem.Cadastro.Infrastructure.EntityConfigurations
 {
     public class TipoSanguineoEntityTypeConfiguration : IEntityTypeConfiguration<TipoSanguineo>
     {
-        public void Configure(EntityTypeBuilder<TipoSanguineo> conf)
+        public static void Configure(EntityTypeBuilder<TipoSanguineo> conf)
         {
             conf.ToTable("TipoSanguineo", CadastroContext.DEFAULT_SCHEMA);
 
@@ -21,5 +21,9 @@ namespace SaudeEmNuvem.Cadastro.Infrastructure.EntityConfigurations
                 .HasMaxLength(50)
                 .IsRequired();
         }
+
+        void IEntityTypeConfiguration<TipoSanguineo>
+            .Configure(EntityTypeBuilder<TipoSanguineo> builder) => Configure(builder);
+
     }
 }

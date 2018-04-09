@@ -6,7 +6,7 @@ namespace SaudeEmNuvem.Cadastro.Infrastructure.EntityConfigurations
 {
     public class TipoTelefoneEntityTypeConfiguration : IEntityTypeConfiguration<TipoTelefone>
     {
-        public void Configure(EntityTypeBuilder<TipoTelefone> conf)
+        public static void Configure(EntityTypeBuilder<TipoTelefone> conf)
         {
             conf.ToTable("TipoTelefone", CadastroContext.DEFAULT_SCHEMA);
 
@@ -21,5 +21,8 @@ namespace SaudeEmNuvem.Cadastro.Infrastructure.EntityConfigurations
                 .HasMaxLength(50)
                 .IsRequired();
         }
+
+        void IEntityTypeConfiguration<TipoTelefone>
+            .Configure(EntityTypeBuilder<TipoTelefone> builder) => Configure(builder);
     }
 }

@@ -7,7 +7,7 @@ namespace SaudeEmNuvem.Cadastro.Infrastructure.EntityConfigurations
 {
     public class PacienteEntityTypeConfiguration : IEntityTypeConfiguration<Paciente>
     {
-        public void Configure(EntityTypeBuilder<Paciente> conf)
+        public static void Configure(EntityTypeBuilder<Paciente> conf)
         {
             conf.ToTable("paciente", CadastroContext.DEFAULT_SCHEMA);
 
@@ -45,5 +45,8 @@ namespace SaudeEmNuvem.Cadastro.Infrastructure.EntityConfigurations
             conf.HasMany(x => x.Telefones).WithOne().HasForeignKey("TelefonesId").IsRequired(false);
             conf.HasOne(x => x.TipoSanguineo).WithOne().HasForeignKey("TipoSanguineoId").IsRequired(false);
         }
+
+        void IEntityTypeConfiguration<Paciente>.Configure(EntityTypeBuilder<Paciente> builder) =>
+            Configure(builder);
     }
 }

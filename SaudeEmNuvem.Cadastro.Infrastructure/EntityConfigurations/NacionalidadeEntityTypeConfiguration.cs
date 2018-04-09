@@ -6,7 +6,7 @@ namespace SaudeEmNuvem.Cadastro.Infrastructure.EntityConfigurations
 {
     public class NacionalidadeEntityTypeConfiguration : IEntityTypeConfiguration<Nacionalidade>
     {
-        public void Configure(EntityTypeBuilder<Nacionalidade> conf)
+        public static void Configure(EntityTypeBuilder<Nacionalidade> conf)
         {
             conf.ToTable("Cor", CadastroContext.DEFAULT_SCHEMA);
 
@@ -21,5 +21,8 @@ namespace SaudeEmNuvem.Cadastro.Infrastructure.EntityConfigurations
                 .HasMaxLength(50)
                 .IsRequired();
         }
+
+        void IEntityTypeConfiguration<Nacionalidade>
+            .Configure(EntityTypeBuilder<Nacionalidade> builder) => Configure(builder);
     }
 }

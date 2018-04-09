@@ -4,9 +4,9 @@ using SaudeEmNuvem.Cadastro.Domain.AggregatesModel.PacienteAggregate;
 
 namespace SaudeEmNuvem.Cadastro.Infrastructure.EntityConfigurations
 {
-    public class SexoEntityTypeConfiguration : IEntityTypeConfiguration<Sexo>
+    public  class SexoEntityTypeConfiguration : IEntityTypeConfiguration<Sexo>
     {
-        public void Configure(EntityTypeBuilder<Sexo> conf)
+        public static void Configure(EntityTypeBuilder<Sexo> conf)
         {
             conf.ToTable("Sexo", CadastroContext.DEFAULT_SCHEMA);
 
@@ -21,5 +21,7 @@ namespace SaudeEmNuvem.Cadastro.Infrastructure.EntityConfigurations
                 .HasMaxLength(50)
                 .IsRequired();
         }
+
+        void IEntityTypeConfiguration<Sexo>.Configure(EntityTypeBuilder<Sexo> builder) => Configure(builder);
     }
 }

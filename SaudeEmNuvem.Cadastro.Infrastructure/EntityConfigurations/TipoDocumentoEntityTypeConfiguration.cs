@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SaudeEmNuvem.Cadastro.Domain.AggregatesModel.PacienteAggregate;
 
@@ -9,7 +6,7 @@ namespace SaudeEmNuvem.Cadastro.Infrastructure.EntityConfigurations
 {
     public class TipoDocumentoEntityTypeConfiguration : IEntityTypeConfiguration<TipoDocumento>
     {
-        public void Configure(EntityTypeBuilder<TipoDocumento> conf)
+        public static void Configure(EntityTypeBuilder<TipoDocumento> conf)
         {
             conf.ToTable("TipoDocumento", CadastroContext.DEFAULT_SCHEMA);
 
@@ -24,5 +21,9 @@ namespace SaudeEmNuvem.Cadastro.Infrastructure.EntityConfigurations
                 .HasMaxLength(50)
                 .IsRequired();
         }
+
+        void IEntityTypeConfiguration<TipoDocumento>
+            .Configure(EntityTypeBuilder<TipoDocumento> builder) => Configure(builder);
+
     }
 }

@@ -6,7 +6,7 @@ namespace SaudeEmNuvem.Cadastro.Infrastructure.EntityConfigurations
 {
     public class CorEntityTypeConfiguration : IEntityTypeConfiguration<Cor>
     {
-        public void Configure(EntityTypeBuilder<Cor> conf)
+        public static void Configure(EntityTypeBuilder<Cor> conf)
         {
             conf.ToTable("Cor", CadastroContext.DEFAULT_SCHEMA);
 
@@ -21,5 +21,7 @@ namespace SaudeEmNuvem.Cadastro.Infrastructure.EntityConfigurations
                 .HasMaxLength(50)
                 .IsRequired();
         }
+
+        void IEntityTypeConfiguration<Cor>.Configure(EntityTypeBuilder<Cor> builder) => Configure(builder);
     }
 }

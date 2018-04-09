@@ -13,12 +13,11 @@ namespace SaudeEmNuvem.Cadastro.Infrastructure
                 .Entries<Entity>()
                 .Where(x => x.Entity.DomainEvents != null && x.Entity.DomainEvents.Any());
 
-            var entityEntries = domainEntities.ToList();
-            var domainEvents = entityEntries
+            var domainEvents = domainEntities
                 .SelectMany(x => x.Entity.DomainEvents)
                 .ToList();
 
-            entityEntries.ToList()
+            domainEntities.ToList()
                 .ForEach(entity => entity.Entity.DomainEvents.Clear());
 
             var tasks = domainEvents

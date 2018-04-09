@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using SaudeEmNuvem.Cadastro.Domain.AggregatesModel.PacienteAggregate;
+using SaudeEmNuvem.Cadastro.Domain.SeedWork;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using SaudeEmNuvem.Cadastro.Domain.AggregatesModel.PacienteAggregate;
-using SaudeEmNuvem.Cadastro.Domain.SeedWork;
 
 namespace SaudeEmNuvem.Cadastro.Infrastructure.Repositories
 {

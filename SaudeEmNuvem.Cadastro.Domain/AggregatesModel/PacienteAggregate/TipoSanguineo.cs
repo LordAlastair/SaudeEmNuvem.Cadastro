@@ -25,7 +25,7 @@ namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel.PacienteAggregate
 
         public static IEnumerable<TipoSanguineo> List()
         {
-            return new[] { APositivo, ANegativo, AbPositivo, AbNegativo, BPositivo, BNegativo, OPositivo, ONegativo };
+            return new[] { APositivo, ANegativo, AbPositivo, AbNegativo, BPositivo, BNegativo, OPositivo, ONegativo, NaoInformado };
         }
 
         public static TipoSanguineo BuscarPeloNome(string nome)

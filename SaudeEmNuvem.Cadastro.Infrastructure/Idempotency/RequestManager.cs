@@ -1,6 +1,6 @@
-﻿using System;
+﻿using SaudeEmNuvem.Cadastro.Domain.Exceptions;
+using System;
 using System.Threading.Tasks;
-using SaudeEmNuvem.Cadastro.Domain.Exceptions;
 
 namespace SaudeEmNuvem.Cadastro.Infrastructure.Idempotency
 {
@@ -13,7 +13,6 @@ namespace SaudeEmNuvem.Cadastro.Infrastructure.Idempotency
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-
         public async Task<bool> ExistAsync(Guid id)
         {
             var request = await _context.
@@ -24,10 +23,8 @@ namespace SaudeEmNuvem.Cadastro.Infrastructure.Idempotency
 
         public async Task CreateRequestForCommandAsync<T>(Guid id)
         {
-            var exists = await ExistAsync(id);
-
-            var request = exists ?
-                throw new CadastroDomainException ($"Requisição com {id} já existe") :
+            var request = await ExistAsync(id) ?
+                throw new CadastroDomainException($"Requisição com {id} já existe") :
                 new ClientRequest()
                 {
                     Id = id,

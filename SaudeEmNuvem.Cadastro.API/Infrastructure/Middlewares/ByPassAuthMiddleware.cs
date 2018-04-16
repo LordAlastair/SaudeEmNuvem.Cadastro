@@ -1,12 +1,11 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Primitives;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Primitives;
 
-namespace Ordering.API.Infrastructure.Middlewares
+namespace SaudeEmNuvem.Cadastro.API.Infrastructure.Middlewares
 {
     class ByPassAuthMiddleware
     {
@@ -17,7 +16,6 @@ namespace Ordering.API.Infrastructure.Middlewares
             _next = next;
             _currentUserId = null;
         }
-
 
         public async Task Invoke(HttpContext context)
         {
@@ -31,7 +29,7 @@ namespace Ordering.API.Infrastructure.Middlewares
                 }
                 context.Response.StatusCode = 200;
                 context.Response.ContentType = "text/string";
-                await context.Response.WriteAsync($"User set to {_currentUserId}");
+                await context.Response.WriteAsync($"Usuário definido como {_currentUserId}");
             }
 
             else if (path == "/noauth/reset")
@@ -39,7 +37,7 @@ namespace Ordering.API.Infrastructure.Middlewares
                 _currentUserId = null;
                 context.Response.StatusCode = 200;
                 context.Response.ContentType = "text/string";
-                await context.Response.WriteAsync($"User set to none. Token required for protected endpoints.");
+                await context.Response.WriteAsync($"Usuário definido como nenhum. Token necessário para endpoints protegidos.");
             }
             else
             {
@@ -55,12 +53,11 @@ namespace Ordering.API.Infrastructure.Middlewares
                     }
                 }
 
-
                 if (!string.IsNullOrEmpty(currentUserId))
                 {
                     var user = new ClaimsIdentity(new[] {
                     new Claim("emails", currentUserId),
-                    new Claim("name", "Test user"),
+                    new Claim("name", "Convidado"),
                     new Claim("nonce", Guid.NewGuid().ToString()),
                     new Claim("ttp://schemas.microsoft.com/identity/claims/identityprovider", "ByPassAuthMiddleware"),
                     new Claim("nonce", Guid.NewGuid().ToString()),

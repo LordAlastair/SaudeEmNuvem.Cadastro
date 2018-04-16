@@ -5,8 +5,8 @@ namespace SaudeEmNuvem.Cadastro.API.Application.Queries
 {
     public interface IPacienteQueries
     {
-        Task<dynamic> GetPacienteAsync(int id);
+        Task<dynamic> BuscarPacienteAsync(int id);
 
-        Task<IEnumerable<dynamic>> GetPacientesAsync();
+        Task<IEnumerable<dynamic>> ListarPacientessAsync();
     }
 }

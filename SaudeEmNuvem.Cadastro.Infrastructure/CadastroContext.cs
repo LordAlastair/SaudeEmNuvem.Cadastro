@@ -17,6 +17,8 @@ namespace SaudeEmNuvem.Cadastro.Infrastructure
         public DbSet<Paciente> Pacientes { get; set; }
         public DbSet<Nacionalidade> Nacionalidades { get; set; }
         public DbSet<TipoSanguineo> TipoSanguineos { get; set; }
+        public DbSet<TipoDocumento> TipoDocumentos { get; set; }
+        public DbSet<TipoTelefone> TipoTelefones { get; set; }
         public DbSet<Cor> Cores { get; set; }
         public DbSet<Sexo> Sexos { get; set; }
 

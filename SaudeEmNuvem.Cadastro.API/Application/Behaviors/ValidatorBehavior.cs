@@ -2,6 +2,7 @@
 using MediatR;
 using SaudeEmNuvem.Cadastro.Domain.Exceptions;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace SaudeEmNuvem.Cadastro.API.Application.Behaviors
@@ -11,7 +12,7 @@ namespace SaudeEmNuvem.Cadastro.API.Application.Behaviors
         private readonly IValidator<TRequest>[] _validators;
         public ValidatorBehavior(IValidator<TRequest>[] validators) => _validators = validators;
 
-        public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next)
+        public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate<TResponse> next)
         {
             var failures = _validators
                 .Select(v => v.Validate(request))

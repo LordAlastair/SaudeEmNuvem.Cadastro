@@ -7,10 +7,10 @@ namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel.PacienteAggregate
 {
     public class Nacionalidade : Enumeration
     {
-        private static readonly Nacionalidade NaoInformado = new Nacionalidade(0, "Não Informado");
-        private static readonly Nacionalidade Brasileiro = new Nacionalidade(1, "Brasileiro");
-        private static readonly Nacionalidade Naturalizado = new Nacionalidade(2, "Naturalizado");
-        private static readonly Nacionalidade Estrangeiro = new Nacionalidade(3, "Estrangeiro");
+        private static readonly Nacionalidade NaoInformado = new Nacionalidade(1, "Não Informado");
+        private static readonly Nacionalidade Brasileiro = new Nacionalidade(2, "Brasileiro");
+        private static readonly Nacionalidade Naturalizado = new Nacionalidade(3, "Naturalizado");
+        private static readonly Nacionalidade Estrangeiro = new Nacionalidade(4, "Estrangeiro");
 
         protected Nacionalidade() { }
         public Nacionalidade(int id, string nome)

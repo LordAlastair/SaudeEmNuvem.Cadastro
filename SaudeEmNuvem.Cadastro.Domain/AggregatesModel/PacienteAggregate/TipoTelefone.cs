@@ -7,15 +7,15 @@ namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel.PacienteAggregate
 {
     public class TipoTelefone : Enumeration
     {
-        private static readonly TipoTelefone Outro = new TipoTelefone(0, "Outro");
-        private static readonly TipoTelefone BIP = new TipoTelefone(1, "BIP");
-        private static readonly TipoTelefone Celular = new TipoTelefone(2, "Celular");
-        private static readonly TipoTelefone CelularCorporativo = new TipoTelefone(3, "Celular Corporativo");
-        private static readonly TipoTelefone Comercial = new TipoTelefone(4, "Comercial");
-        private static readonly TipoTelefone Contato = new TipoTelefone(5, "Contato");
-        private static readonly TipoTelefone Fax = new TipoTelefone(6, "Fax");
-        private static readonly TipoTelefone Público = new TipoTelefone(7, "Público");
-        private static readonly TipoTelefone Residencial = new TipoTelefone(8, "Residencial");
+        private static readonly TipoTelefone Outro = new TipoTelefone(1, "Outro");
+        private static readonly TipoTelefone BIP = new TipoTelefone(2, "BIP");
+        private static readonly TipoTelefone Celular = new TipoTelefone(3, "Celular");
+        private static readonly TipoTelefone CelularCorporativo = new TipoTelefone(4, "Celular Corporativo");
+        private static readonly TipoTelefone Comercial = new TipoTelefone(5, "Comercial");
+        private static readonly TipoTelefone Contato = new TipoTelefone(6, "Contato");
+        private static readonly TipoTelefone Fax = new TipoTelefone(7, "Fax");
+        private static readonly TipoTelefone Público = new TipoTelefone(8, "Público");
+        private static readonly TipoTelefone Residencial = new TipoTelefone(9, "Residencial");
 
         protected TipoTelefone() { }
         public TipoTelefone(int id, string nome)

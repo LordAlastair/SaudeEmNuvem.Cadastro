@@ -4,9 +4,9 @@ using System;
 
 namespace SaudeEmNuvem.Cadastro.Domain.Events
 {
-    public class SolicitacaoDeCadastroIniciadoDomainEvent : INotification
+    public class CriarCadastroIniciadoDomainEvent : INotification
     {
-        public SolicitacaoDeCadastroIniciadoDomainEvent(Paciente paciente, DateTime dataSolicitacao, string nomeAtendente)
+        public CriarCadastroIniciadoDomainEvent(Paciente paciente, DateTime dataSolicitacao, string nomeAtendente)
         {
             Paciente = paciente;
             DataSolicitacao = dataSolicitacao;

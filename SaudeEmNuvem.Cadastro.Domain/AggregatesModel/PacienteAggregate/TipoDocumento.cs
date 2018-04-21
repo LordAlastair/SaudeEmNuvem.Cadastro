@@ -7,11 +7,11 @@ namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel.PacienteAggregate
 {
     public class TipoDocumento : Enumeration
     {
-        private static readonly TipoDocumento Outro = new TipoDocumento(0, "Outro");
-        private static readonly TipoDocumento CPF = new TipoDocumento(1, "CPF");
-        private static readonly TipoDocumento RG = new TipoDocumento(2, "RG");
-        private static readonly TipoDocumento DNV = new TipoDocumento(3, "DNV");
-        private static readonly TipoDocumento InscricaoSocial = new TipoDocumento(4, "NIS/PIS/PASEP");
+        private static readonly TipoDocumento Outro = new TipoDocumento(1, "Outro");
+        private static readonly TipoDocumento CPF = new TipoDocumento(2, "CPF");
+        private static readonly TipoDocumento RG = new TipoDocumento(3, "RG");
+        private static readonly TipoDocumento DNV = new TipoDocumento(4, "DNV");
+        private static readonly TipoDocumento InscricaoSocial = new TipoDocumento(5, "NIS/PIS/PASEP");
 
         protected TipoDocumento() { }
 

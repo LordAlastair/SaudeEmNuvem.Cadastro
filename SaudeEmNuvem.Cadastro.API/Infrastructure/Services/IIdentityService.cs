@@ -2,6 +2,6 @@
 {
     public interface IIdentityService
     {
-        string BuscarIdentidadeDousuario();
+        string BuscarIdentidadeDoUsuario();
     }
 }

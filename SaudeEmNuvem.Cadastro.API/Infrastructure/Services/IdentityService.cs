@@ -12,7 +12,7 @@ namespace SaudeEmNuvem.Cadastro.API.Infrastructure.Services
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-        public string BuscarIdentidadeDousuario()
+        public string BuscarIdentidadeDoUsuario()
         {
             return _context.HttpContext.User.FindFirst("sub").Value;
         }

@@ -35,8 +35,11 @@ namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel.PacienteAggregate
             _documentos = new List<Documento>();
         }
 
-        public Paciente(Pessoa pessoa, Nacionalidade nacionalidade, Naturalidade naturalidade, Naturalizacao naturalizacao,
-            TipoSanguineo tipoSanguineo, Cor cor, Sexo sexo, Endereco endereco, EtiniaIndigena etiniaIndigena, Obito obito, Meta meta)
+        public Paciente(Pessoa pessoa, Nacionalidade nacionalidade,
+            Naturalidade naturalidade, Naturalizacao naturalizacao,
+            TipoSanguineo tipoSanguineo, Cor cor, Sexo sexo, Endereco endereco,
+            EtiniaIndigena etiniaIndigena, Obito obito, List<Documento> documentos,
+            List<Email> emails, List<Telefone> telefones)
         {
             Pessoa = pessoa;
             Nacionalidade = nacionalidade;
@@ -48,8 +51,11 @@ namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel.PacienteAggregate
             Endereco = endereco;
             EtiniaIndigena = etiniaIndigena;
             Obito = obito;
-            Meta = meta;
+            _documentos = documentos;
+            _emails = emails;
+            _telefones = telefones;
         }
+
 
         //atributos criados, falta adicionar as regras de negocio
     }

@@ -36,18 +36,18 @@ namespace SaudeEmNuvem.Cadastro.API.Application.Commands
         #endregion
         #region Naturalizacao
         [DataMember]
-        public string Numero { get; private set; }
+        public string NumeroNaturalizacao { get; private set; }
 
         [DataMember]
         public string Portaria { get; private set; }
         [DataMember]
-        public string Pais { get; private set; }
+        public string PaisOrigem { get; private set; }
 
         [DataMember]
-        public DateTime DataEntrada { get; private set; }
+        public DateTime DataEntradaPais { get; private set; }
 
         [DataMember]
-        public DateTime? DataNaturalizacao { get; private set; }
+        public DateTime? DataNaturalizacaoPais { get; private set; }
         #endregion
         #region Endereco
         [DataMember]
@@ -65,16 +65,13 @@ namespace SaudeEmNuvem.Cadastro.API.Application.Commands
         #endregion
         #region Obito
         [DataMember]
-        public int Medico { get; private set; }
+        public string Medico { get; private set; }
 
         [DataMember]
-        public DateTime Horario { get; private set; }
+        public DateTime HorarioObito { get; private set; }
 
         [DataMember]
-        public string Descricao { get; private set; }
-        #endregion
-        #region Meta
-        public string ChaveNaturalPaciente { get; private set; }
+        public string DescricaoObito { get; private set; }
         #endregion
         #region Enumerations
         [DataMember]
@@ -91,38 +88,37 @@ namespace SaudeEmNuvem.Cadastro.API.Application.Commands
         #endregion
         #region Listas de VOs
         [DataMember]
-        private readonly List<DocumentoDTO> _documentos;
+        private readonly List<DocumentoDto> _documentos;
 
         [DataMember]
-        public IReadOnlyCollection<DocumentoDTO> Documentos => _documentos;
+        public IReadOnlyCollection<DocumentoDto> Documentos => _documentos;
 
         [DataMember]
-        private readonly List<EmailDTO> _emails;
+        private readonly List<EmailDto> _emails;
 
         [DataMember]
-        public IReadOnlyCollection<EmailDTO> Emails => _emails;
+        public IReadOnlyCollection<EmailDto> Emails => _emails;
 
         [DataMember]
-        private readonly List<TelefoneDTO> _telefones;
+        private readonly List<TelefoneDto> _telefones;
 
         [DataMember]
-        public IReadOnlyCollection<TelefoneDTO> Telefones => _telefones;
+        public IReadOnlyCollection<TelefoneDto> Telefones => _telefones;
         #endregion
 
         public CriarCadastroCommand()
         {
-            _documentos = new List<DocumentoDTO>();
-            _emails = new List<EmailDTO>();
-            _telefones = new List<TelefoneDTO>();
+            _documentos = new List<DocumentoDto>();
+            _emails = new List<EmailDto>();
+            _telefones = new List<TelefoneDto>();
         }
 
         public CriarCadastroCommand(string nome, string apelido, string nomeMae, string nomePai,
             DateTime dataNascimento, string municipioNascimento, string paisNascimento, bool? nomade,
             string numero, string portaria, string pais, DateTime dataEntrada, DateTime? dataNaturalizacao,
-            string cep, int numeroEndereco, int chaveNaturalEtiniaIndigena, string etnia, int medico,
-            DateTime horario, string descricao, string chaveNaturalPaciente, int nacionalidade,
-            int tipoSanguineo, int cor, int sexo, List<DocumentoDTO> documentos, List<EmailDTO> emails,
-            List<TelefoneDTO> telefones)
+            string cep, int numeroEndereco, int chaveNaturalEtiniaIndigena, string etnia, string medico,
+            DateTime horario, string descricao, int nacionalidade, int tipoSanguineo, int cor, int sexo,
+            List<DocumentoDto> documentos, List<EmailDto> emails, List<TelefoneDto> telefones)
         {
             Nome = nome;
             Apelido = apelido;
@@ -132,19 +128,18 @@ namespace SaudeEmNuvem.Cadastro.API.Application.Commands
             MunicipioNascimento = municipioNascimento;
             PaisNascimento = paisNascimento;
             Nomade = nomade;
-            Numero = numero;
+            NumeroNaturalizacao = numero;
             Portaria = portaria;
-            Pais = pais;
-            DataEntrada = dataEntrada;
-            DataNaturalizacao = dataNaturalizacao;
+            PaisOrigem = pais;
+            DataEntradaPais = dataEntrada;
+            DataNaturalizacaoPais = dataNaturalizacao;
             Cep = cep;
             NumeroEndereco = numeroEndereco;
             ChaveNaturalEtiniaIndigena = chaveNaturalEtiniaIndigena;
             Etnia = etnia;
             Medico = medico;
-            Horario = horario;
-            Descricao = descricao;
-            ChaveNaturalPaciente = chaveNaturalPaciente;
+            HorarioObito = horario;
+            DescricaoObito = descricao;
             Nacionalidade = nacionalidade;
             TipoSanguineo = tipoSanguineo;
             Cor = cor;

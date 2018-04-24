@@ -10,6 +10,16 @@ namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel.PacienteAggregate
         public string Medico { get; }
         public DateTime Horario { get; }
         public string Descricao { get; }
+
+        private Obito() { }
+
+        public Obito(string medico, DateTime horario, string descricao)
+        {
+            Medico = medico;
+            Horario = horario;
+            Descricao = descricao;
+        }
+
         protected override IEnumerable<object> GetAtomicValues()
         {
             yield return Medico;

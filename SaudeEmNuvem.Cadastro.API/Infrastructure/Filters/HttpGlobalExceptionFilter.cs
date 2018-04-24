@@ -10,18 +10,18 @@ namespace SaudeEmNuvem.Cadastro.API.Infrastructure.Filters
 {
     public class HttpGlobalExceptionFilter : IExceptionFilter
     {
-        private readonly IHostingEnvironment env;
-        private readonly ILogger<HttpGlobalExceptionFilter> logger;
+        private readonly IHostingEnvironment _env;
+        private readonly ILogger<HttpGlobalExceptionFilter> _logger;
 
         public HttpGlobalExceptionFilter(IHostingEnvironment env, ILogger<HttpGlobalExceptionFilter> logger)
         {
-            this.env = env;
-            this.logger = logger;
+            this._env = env;
+            this._logger = logger;
         }
 
         public void OnException(ExceptionContext context)
         {
-            logger.LogError(new EventId(context.Exception.HResult),
+            _logger.LogError(new EventId(context.Exception.HResult),
                 context.Exception,
                 context.Exception.Message);
 
@@ -42,7 +42,7 @@ namespace SaudeEmNuvem.Cadastro.API.Infrastructure.Filters
                     Messages = new[] { "Ocorreu um erro. Tente novamente." }
                 };
 
-                if (env.IsDevelopment())
+                if (_env.IsDevelopment())
                 {
                     json.DeveloperMessage = context.Exception;
                 }

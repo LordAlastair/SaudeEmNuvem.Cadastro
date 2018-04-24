@@ -1,8 +1,8 @@
 ﻿namespace SaudeEmNuvem.Cadastro.API.Dto
 {
-    public class TelefoneDTO
+    public class TelefoneDto
     {
-        public int DDD { get; set; }
+        public int Ddd { get; set; }
         public string Numero { get; set; }
         public int TipoTelefone { get; set; }
     }

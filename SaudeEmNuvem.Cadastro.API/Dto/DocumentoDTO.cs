@@ -1,6 +1,6 @@
 ﻿namespace SaudeEmNuvem.Cadastro.API.Dto
 {
-    public class DocumentoDTO
+    public class DocumentoDto
     {
         public int TipoDocumento { get; set; }
         public int NumeroDocumento { get; set; }

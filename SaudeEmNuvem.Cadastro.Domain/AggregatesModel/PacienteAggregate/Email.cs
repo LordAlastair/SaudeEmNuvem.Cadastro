@@ -6,21 +6,20 @@ namespace SaudeEmNuvem.Cadastro.Domain.AggregatesModel.PacienteAggregate
     //Possível migração para o módulo de autenticação...
     public class Email : ValueObject
     {
-        public string EnderecoEmail { get; }
+        public string Endereco { get; }
         public bool Principal { get; }
         public bool Confirmado { get; }
 
         protected Email() { }
-        public Email(string enderecoEmail, bool principal, bool confirmado)
+        public Email(string enderecoEmail, bool principal)
         {
-            EnderecoEmail = enderecoEmail;
+            Endereco = enderecoEmail;
             Principal = principal;
-            Confirmado = confirmado;
         }
 
         protected override IEnumerable<object> GetAtomicValues()
         {
-            yield return EnderecoEmail;
+            yield return Endereco;
             yield return Principal;
             yield return Confirmado;
         }
